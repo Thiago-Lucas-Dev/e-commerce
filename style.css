@@ -12,8 +12,13 @@ body{
     flex-direction: column;
 }
 
-.nome-site{
+.nome{
     font-size: 50px;
+    font-weight: bolder;
+}
+
+a > span{
+    color: red;
 }
 
 header{
@@ -21,22 +26,27 @@ header{
     justify-content: space-around;
     padding: 20px;
     background-color: #363636;
+    position: sticky;
+    top: 0;
+    height: 80px;
+    align-items: center;
 }
 
 main{
     flex: 1;
+    
 }
 
-h1, a{
-    padding-right: 10px;
+h1{
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+
+a{
     color: white;
     text-decoration: none;
-}
-
-
-a.nome{
-    text-decoration: none;
-    font-size: 50px;
 }
 
 input[type="search"]::-webkit-search-cancel-button {
@@ -81,14 +91,15 @@ input[type="search"]::-webkit-search-cancel-button {
     font-size: 20px;
     display: grid;
     grid-template-columns:repeat(3, auto); 
-    gap: 20px;   
+    gap: 10px;
 }
 
+.icones i{
+    transition: transform 0.2 ease;
+}
 
-
-h1{
-    padding: 20px;
-    text-align: center;
+.icones i:hover{
+    transform: scale(1.2);
 }
 
 .produtos{
@@ -140,12 +151,125 @@ p{
    
 }
 
+.carrinho{
+   position: fixed;
+   top: 0;
+   right: 0;
+   height: 100vh;
+   width: 450px;
+   background-color: rgb(238, 238, 238);
+   display: flex;
+   flex-direction: column;
+   display: none;
+   transition: 0.3s;
+}
+
+.carrinho.ativo{
+    right: 0;
+}
+
+.topo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.fechar{
+    cursor: pointer;
+}
+
+.itens{
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.topo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.remover {
+    cursor: pointer;
+    font-weight: bold;
+    color: red;
+    font-size: 18px;
+    margin-left: auto;
+}
+
+.item-carrinho{
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.item-carrinho img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.info-item{
+    display: flex;
+    flex-direction: column;
+    grid-area: 5px;
+    width: 100%;
+}
+
+.nome-item{
+    font-weight: bold;
+    color: black;
+}
+
+.preco-item{
+    color: green;
+    font-weight: bold;
+}
+
+.quantidade{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantidade button{
+    width: 25px;
+    height: 25px;
+    border: none;
+    background-color: #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.rodape{
+    padding: 15px;
+    border-top: 1px solid #ccc;
+}
+
+.rodape button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    background: #02021a;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
 footer{
-    background-color: rgba(0, 0, 0, 0.651);
+    background-color: rgb(0, 0, 0);
     display: flex;
     justify-content: center;
     gap: 30px;
-    padding: 10px;
+    padding: 3px;
 }
 
 .info-footer:hover{
