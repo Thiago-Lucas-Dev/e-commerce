@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>e-commerce</title>
 </head>
 <body>
@@ -16,8 +16,8 @@
         </div>
         <div class="icones">
             <a href="login.html"><i class="fa-solid fa-user"></i></a>
-            <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="#"><i class="fa-solid fa-heart"></i></a>
+            <a href="#" id="btn-carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="favoritos.html"><i class="fa-solid fa-heart"></i></a>
         </div>
     </header>
 
@@ -29,7 +29,7 @@
                 <div class="info">
                     <p>Teclado mecânico</p>
                     <p><span class="preco">R$ 359,99</span></p>
-                    <p class="Adicionar">Adicionar ao carrinho</p>
+                    <button class="Adicionar">Adicionar ao carrinho</button>
                 </div>
             </div>
             <div class="produto">
@@ -37,16 +37,16 @@
                 <div class="info">
                     <p>Mouse</p>
                     <p><span class="preco">R$ 220,50</span></p>
-                    <p class="Adicionar">Adicionar ao carrinho</p>
+                    <button class="Adicionar">Adicionar ao carrinho</button>
                 </div>
             </div>
             <div class="produto">
                 <img src="imagens/8045f5b9-ba9a-4595-b44f-6b0f32b8c95d.jpg" alt="Headset">
-                <ddiv class="info">
+                <div class="info">
                     <p>Headset</p>
                     <p><span class="preco">R$ 360,90</span></p>
-                    <p class="Adicionar">Adicionar ao carrinho</p>
-                </info>
+                    <button class="Adicionar">Adicionar ao carrinho</button>
+                </div>
             </div>
         </div>
     </main>
@@ -104,13 +104,11 @@
 
         <div class="rodape">
             <div class="total">
-                <span>Total: </span>
-                <span>R$ 0,00</span>
+                <span class="valor">Total: </span>
+                <span class="valor">R$ 0,00</span>
             </div>
             <button class="finalizar">Finalizar Compra</button>
         </div>
-        
-
     </aside>
 
     <footer>
