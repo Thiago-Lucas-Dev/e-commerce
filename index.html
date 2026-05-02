@@ -27,7 +27,7 @@
             <div class="produto">
                 <img src="imagens/Logitech-lanca-teclado-mecanico-Pro-X-60-no-Brasil-912x569.webp" alt="Teclado mecânico">
                 <div class="info">
-                    <p>Teclado mecânico</p>
+                    <p class="nome-produto">Teclado mecânico</p>
                     <p><span class="preco">R$ 359,99</span></p>
                     <button class="Adicionar">Adicionar ao carrinho</button>
                 </div>
@@ -35,7 +35,7 @@
             <div class="produto">
                 <img src="imagens/optical-vs-laser-mouse-for-gaming-hero.avif" alt="Mouse">
                 <div class="info">
-                    <p>Mouse</p>
+                    <p class="nome-produto">Mouse</p>
                     <p><span class="preco">R$ 220,50</span></p>
                     <button class="Adicionar">Adicionar ao carrinho</button>
                 </div>
@@ -43,7 +43,7 @@
             <div class="produto">
                 <img src="imagens/8045f5b9-ba9a-4595-b44f-6b0f32b8c95d.jpg" alt="Headset">
                 <div class="info">
-                    <p>Headset</p>
+                    <p class="nome-produto">Headset</p>
                     <p><span class="preco">R$ 360,90</span></p>
                     <button class="Adicionar">Adicionar ao carrinho</button>
                 </div>
@@ -57,45 +57,13 @@
             <span class="fechar">X</span>
         </div>
 
+        <div class="carrinho-vazio">
+            <p><span style="color: black;">Seu carrinho está vazio.</span></p>
+            <a href="index.html" class="btn-voltar">Ver produtos</a>
+        </div>
+
         <div class="itens">
-            <div class="item-carrinho">
-                <img src="imagens/optical-vs-laser-mouse-for-gaming-hero.avif" alt="Mouse">
-
-                <div class="info-item">
-                    <div class="topo-item">
-                        <p class="nome-item">Mouse</p>
-                        <i class="fa-solid fa-xmark remover"></i>
-                    </div>
-
-                    <p class="preco-item">R$220,50</p>
-                    
-
-                    <div class="quantidade">
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="item-carrinho">
-                <img src="imagens/8045f5b9-ba9a-4595-b44f-6b0f32b8c95d.jpg" alt="Mouse">
-
-                <div class="info-item">
-                    <div class="topo-item">
-                        <p class="nome-item">Headset</p>
-                        <i class="fa-solid fa-xmark remover"></i>
-                    </div>
-                    
-                    <p class="preco-item">R$360,90</p>
-
-                    <div class="quantidade">
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                    </div>
-                </div>
-            </div>
+         
         </div>
 
         <div class="total">
@@ -105,7 +73,7 @@
         <div class="rodape">
             <div class="total">
                 <span class="valor">Total: </span>
-                <span class="valor">R$ 0,00</span>
+                <span class="valor-total">R$ 0,00</span>
             </div>
             <button class="finalizar">Finalizar Compra</button>
         </div>
@@ -116,5 +84,6 @@
         <a class="info-footer" href="#">Contato</a>
         <a class="info-footer" href="#">Politica de Privacidade</a>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

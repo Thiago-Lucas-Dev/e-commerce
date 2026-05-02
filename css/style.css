@@ -175,12 +175,11 @@ p{
    display: flex;
    flex-direction: column;
    transition: 0.3s;
-   display: none;
+   right: -450px;
 }
 
 .carrinho.ativo{
     right: 0;
- 
 }
 
 .topo{
@@ -237,8 +236,7 @@ p{
     width: 100%;
 }
 
-.nome-item{
-    font-weight: bold;
+.produto-carrinho{
     color: black;
 }
 
@@ -282,6 +280,22 @@ p{
 .valor{
     color: black;
 }
+
+.carrinho-vazio{
+    text-align: center;
+    padding: 20px;
+    color: black;
+}
+
+.btn-voltar{
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px ;
+    background: red;
+    color: white;
+    font-weight: bolder;
+}
+
 
 footer{
     background-color: rgb(0, 0, 0);
