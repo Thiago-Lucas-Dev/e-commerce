@@ -12,7 +12,7 @@
         <a class="nome" href="index.html"><span>PIM</span>STORE</a>
         <div class="pesquisar">
             <input type="search" id="barra" placeholder="Busca de produtos">
-            <a href="#"><i class="fa-solid fa-magnifying-glass icone-busca"></i></a>
+            <a href="#" id="btn-busca"><i class="fa-solid fa-magnifying-glass icone-busca"></i></a>
         </div>
         <div class="icones">
             <a href="login.html"><i class="fa-solid fa-user"></i></a>
@@ -25,6 +25,7 @@
         <h1>Produtos em destaque</h1>
         <div class="produtos">
             <div class="produto">
+                <i class="fa-solid fa-heart favorito" ></i>
                 <img src="imagens/Logitech-lanca-teclado-mecanico-Pro-X-60-no-Brasil-912x569.webp" alt="Teclado mecânico">
                 <div class="info">
                     <p class="nome-produto">Teclado mecânico</p>
@@ -33,6 +34,7 @@
                 </div>
             </div>
             <div class="produto">
+                <i class="fa-solid fa-heart favorito" ></i>
                 <img src="imagens/optical-vs-laser-mouse-for-gaming-hero.avif" alt="Mouse">
                 <div class="info">
                     <p class="nome-produto">Mouse</p>
@@ -41,6 +43,7 @@
                 </div>
             </div>
             <div class="produto">
+                <i class="fa-solid fa-heart favorito" ></i>
                 <img src="imagens/8045f5b9-ba9a-4595-b44f-6b0f32b8c95d.jpg" alt="Headset">
                 <div class="info">
                     <p class="nome-produto">Headset</p>
@@ -49,6 +52,10 @@
                 </div>
             </div>
         </div>
+
+        <p id="nenhum-resultado" style="display: none; color: white; text-align: center;">
+            Nenhum produto encontrado
+        <p>
     </main>
 
     <aside class="carrinho">
@@ -86,4 +93,5 @@
     </footer>
     <script src="script.js"></script>
 </body>
+
 </html>

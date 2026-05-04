@@ -1,3 +1,47 @@
+//Busca de produtos
+const barra = document.querySelector("#barra");
+const produtos = document.querySelectorAll(".produto");
+const btnBusca = document.querySelector("#btn-busca");
+const mensagem = document.querySelector("#nenhum-resultado")
+
+
+function buscar() {
+    const valor = barra.value.toLowerCase();
+    let encontrou = false;
+
+    produtos.forEach(produto => {
+        const nome = produto.querySelector(".nome-produto").innerText.toLowerCase();
+
+        if (nome.includes(valor)) {
+            produto.style.display = "";
+            encontrou = true;
+        } else {
+            produto.style.display = "none";
+        }
+    });
+
+    if (mensagem) {
+    if(encontrou){
+        mensagem.style.display = "none";
+    } else {
+        mensagem.style.display = "block";
+    }
+}
+}
+
+//Busca de produto ao clicar no ícone
+btnBusca.addEventListener("click", function(e){
+    e.preventDefault(); // evita recarregar
+    buscar();
+});
+
+//Busca de produto ao apertar Enter
+barra.addEventListener("keypress", function(e){
+    if (e.key === "Enter") {
+        buscar();
+    }
+});
+
 //Abrir e fechar carrinho ao clicar no ícone de carrinho
 const btnCarrinho = document.querySelector("#btn-carrinho");
 const carrinho = document.querySelector(".carrinho");
@@ -133,4 +177,57 @@ function atualizarTotal() {
 
     document.querySelector(".valor-total").innerText =
         "R$ " + total.toFixed(2).replace(".", ",");
+}
+
+
+
+// FAVORITOS
+const botoesFavorito = document.querySelectorAll(".favorito");
+
+
+let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+
+botoesFavorito.forEach(botao => {
+    const produto = botao.closest(".produto");
+    const nome = produto.querySelector(".nome-produto").innerText;
+
+    const existe = favoritos.some(item => item.nome === nome);
+
+    if (existe) {
+        botao.classList.add("ativo");
+    }
+});
+
+//Clique no coração
+botoesFavorito.forEach(botao => {
+    botao.addEventListener("click", function(){
+
+        const produto = botao.closest(".produto");
+
+        const nome = produto.querySelector(".nome-produto").innerText;
+        const preco = produto.querySelector(".preco").innerText;
+        const imagem = produto.querySelector("img").src;
+
+        salvarFavorito({ nome, preco, imagem }, botao);
+    });
+});
+
+//Função adicionar/remover
+function salvarFavorito(produto, botao) {
+
+    let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+
+    const index = favoritos.findIndex(item => item.nome === produto.nome);
+
+    if (index === -1) {
+        // adiciona
+        favoritos.push(produto);
+        botao.classList.add("ativo");
+    } else {
+        // remove
+        favoritos.splice(index, 1);
+        botao.classList.remove("ativo");
+    }
+
+    localStorage.setItem("favoritos", JSON.stringify(favoritos));
 }
