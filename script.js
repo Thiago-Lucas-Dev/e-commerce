@@ -31,7 +31,7 @@ function buscar() {
 
 //Busca de produto ao clicar no ícone
 btnBusca.addEventListener("click", function(e){
-    e.preventDefault(); // evita recarregar
+    e.preventDefault();
     buscar();
 });
 
