@@ -3,64 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/cadastro.css">
-    <title>Cadastro</title>
+    <title>Cadastro | PIMSTORE</title>
 </head>
 <body>
-    <header>
-        <a class="nome" href="index.html"><span>PIM</span>STORE</a>
-        <div class="pesquisar">
-            <input type="search" id="barra" placeholder="Busca de produtos">
-            <a href="#" id="btn-busca"><i class="fa-solid fa-magnifying-glass icone-busca"></i></a>
-        </div>
-        <div class="icones">
-            <a href="login.html"><i class="fa-solid fa-user"></i></a>
-            <a href="#" id="btn-carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="favoritos.html"><i class="fa-solid fa-heart"></i></a>
-        </div>
-    </header>
+    <main class="auth-page">
+        <section class="auth-card register-card">
+            <div class="user-icon">
+                <i class="fa-regular fa-user"></i>
+            </div>
 
-    <form class="cadastro">
-        <h2>Cadastre-se</h2>
+            <div class="auth-title">
+                <h1>Crie sua conta na <span>PIM</span>STORE</h1>
+                <p>Cadastre-se para acessar sua conta e começar sua jornada gamer.</p>
+            </div>
 
-        <div class="campo">
-            <input type="email" id="email" placeholder="Email" required maxlength="30">
-        </div>
+            <form class="cadastro" action="#" method="post">
+                <label for="nome">Nome completo</label>
+                <div class="input-box">
+                    <i class="fa-regular fa-user"></i>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome completo" autocomplete="name" required maxlength="80">
+                </div>
 
-        <div  class="campo">
-            <input type="password" id="senha" placeholder="Senha" required minlength="8" maxlength="15">
-        </div>
+                <label for="email">E-mail</label>
+                <div class="input-box">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" id="email" name="email" placeholder="seu@email.com" autocomplete="email" required maxlength="60">
+                </div>
 
-        <div class="campo">
-            <input type="password" id="confirmarSenha" placeholder="Confirmar senha" required minlength="8" maxlength="15">
-        </div>
+                <label for="senha">Senha</label>
+                <div class="input-box">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="senha" name="senha" placeholder="••••••••••" autocomplete="new-password" required minlength="8" maxlength="20">
+                    <button class="show-password" type="button" aria-label="Mostrar senha" data-target="senha">
+                        <i class="fa-regular fa-eye-slash"></i>
+                    </button>
+                </div>
 
-        <input type="submit" class="cadastrar" value="Cadastrar">
+                <label for="confirmarSenha">Confirmar senha</label>
+                <div class="input-box">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="••••••••••" autocomplete="new-password" required minlength="8" maxlength="20">
+                    <button class="show-password" type="button" aria-label="Mostrar senha" data-target="confirmarSenha">
+                        <i class="fa-regular fa-eye-slash"></i>
+                    </button>
+                </div>
 
-        <p id="erro-senha">
-            As senhas não coincidem
-        </p>
-    </form>
+                <div class="form-options register-options">
+                    <label class="check-option">
+                        <input type="checkbox" id="termos" required checked>
+                        <span>Aceito os termos e condições</span>
+                    </label>
+                    <a href="login.html">Já tenho conta</a>
+                </div>
 
-<!--Script para confirmar senhas iguais-->
-<script>
-const form = document.querySelector(".cadastro");
-const erro = document.querySelector("#erro-senha");
+                <p id="erro-senha">As senhas não coincidem</p>
 
-erro.style.display ="none";
+                <button class="btn-primary" type="submit">
+                    Criar conta
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
 
-form.addEventListener("submit", function(e) {
-    const senha = document.querySelector("#senha").value;
-    const confirmar = document.querySelector("#confirmarSenha").value;
+                <a class="btn-secondary" href="login.html">Voltar para login</a>
 
-    if (senha !== confirmar) {
-        e.preventDefault();
-        erro.style.display= "block";
-    } else {
-        erro.style.display = "none";
-    }
-});
-</script>
+                <div class="divider">
+                    <span>Ou continue com</span>
+                </div>
+
+                <div class="social-login">
+                    <a href="#" class="social-btn google">
+                        <i class="fa-brands fa-google"></i>
+                        Google
+                    </a>
+                    <a href="#" class="social-btn twitch">
+                        <i class="fa-brands fa-twitch"></i>
+                        Twitch
+                    </a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        document.querySelectorAll('.show-password').forEach((button) => {
+            button.addEventListener('click', () => {
+                const input = document.getElementById(button.dataset.target);
+                const icon = button.querySelector('i');
+                const isPassword = input.type === 'password';
+
+                input.type = isPassword ? 'text' : 'password';
+                icon.classList.toggle('fa-eye', isPassword);
+                icon.classList.toggle('fa-eye-slash', !isPassword);
+            });
+        });
+
+        const form = document.querySelector('.cadastro');
+        const erro = document.querySelector('#erro-senha');
+
+        form.addEventListener('submit', (event) => {
+            const senha = document.querySelector('#senha').value;
+            const confirmar = document.querySelector('#confirmarSenha').value;
+
+            if (senha !== confirmar) {
+                event.preventDefault();
+                erro.classList.add('show');
+            } else {
+                erro.classList.remove('show');
+            }
+        });
+    </script>
 </body>
 </html>
