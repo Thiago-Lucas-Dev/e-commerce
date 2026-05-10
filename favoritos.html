@@ -3,62 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Favoritos</title>
+    <title>Favoritos | PIMSTORE</title>
 </head>
 <body class="pagina-favoritos">
     <header>
         <a class="nome" href="index.html"><span>PIM</span>STORE</a>
+
         <div class="pesquisar">
             <input type="search" id="barra" placeholder="Busca de produtos">
-            <a href="#" id="btn-busca"><i class="fa-solid fa-magnifying-glass icone-busca"></i></a>
+            <button id="btn-busca" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
+
         <div class="icones">
-            <a href="login.html"><i class="fa-solid fa-user"></i></a>
-            <a href="" id="btn-carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="#"><i class="fa-solid fa-heart"></i></a>
+            <a href="login.html" aria-label="Login"><i class="fa-solid fa-user"></i></a>
+            <a href="index.html" aria-label="Carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="favoritos.html" class="icone-favoritos ativo" aria-label="Favoritos">
+                <i class="fa-solid fa-heart"></i>
+                <span class="badge-favoritos">6</span>
+            </a>
         </div>
     </header>
 
-    <main>
-        <h1>Seus favoritos</h1>
+    <main class="favoritos-main">
+        <section class="topo-favoritos">
+            <div class="titulo-area">
+                <h1>Seus favoritos</h1>
+                <p>Aqui estão os produtos que você salvou.</p>
+            </div>
+        </section>
 
-        <div class="produtos">
-        
+        <section class="linha-info">
+            <p class="quantidade">6 produtos</p>
+            <select class="ordenacao" id="ordenacao">
+                <option value="recentes">Mais recentes</option>
+                <option value="menor-preco">Menor preço</option>
+                <option value="maior-preco">Maior preço</option>
+                <option value="nome">Nome</option>
+            </select>
+        </section>
+
+        <section class="produtos favoritos-grid" id="listaFavoritos"></section>
+
+        <div class="acoes-baixo">
+            <button class="limpar" id="limparFavoritos">
+                <i class="fa-regular fa-trash-can"></i>
+                Limpar todos os favoritos
+            </button>
         </div>
     </main>
 
-    <script>
-   const lista = document.querySelector(".produtos");
-
-const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
-
-favoritos.forEach(produto => {
-
-    const div = document.createElement("div");
-    div.classList.add("produto");
-
-    div.innerHTML = `
-        <img src="${produto.imagem}">
-        <div class="info">
-            <p class="nome-produto">${produto.nome}</p>
-            <p><span class="preco">${produto.preco}</span></p>
-            <button class="Adicionar">Adicionar ao carrinho</button>
-        </div>
-    `;
-
-    lista.appendChild(div);
-
-    // 👇 ESSA PARTE RESOLVE TUDO
-    const botao = div.querySelector(".Adicionar");
-
-    botao.addEventListener("click", function(){
-        adicionarAoCarrinho(produto.nome, produto.preco, produto.imagem);
-    });
-
-});
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
