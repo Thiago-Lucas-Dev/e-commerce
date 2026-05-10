@@ -3,95 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>e-commerce</title>
+    <title>PIMSTORE</title>
 </head>
 <body>
     <header>
         <a class="nome" href="index.html"><span>PIM</span>STORE</a>
+
         <div class="pesquisar">
             <input type="search" id="barra" placeholder="Busca de produtos">
-            <a href="#" id="btn-busca"><i class="fa-solid fa-magnifying-glass icone-busca"></i></a>
+            <button id="btn-busca" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
+
         <div class="icones">
-            <a href="login.html"><i class="fa-solid fa-user"></i></a>
-            <a href="#" id="btn-carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="favoritos.html"><i class="fa-solid fa-heart"></i></a>
+            <a href="login.html" aria-label="Login"><i class="fa-solid fa-user"></i></a>
+            <a href="#" id="btn-carrinho" aria-label="Carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="favoritos.html" class="icone-favoritos" aria-label="Favoritos">
+                <i class="fa-solid fa-heart"></i>
+                <span class="badge-favoritos">0</span>
+            </a>
         </div>
     </header>
 
-    <main>
-        <h1>Produtos em destaque</h1>
-        <div class="produtos">
-            <div class="produto">
-                <i class="fa-solid fa-heart favorito" ></i>
-                <img src="imagens/Logitech-lanca-teclado-mecanico-Pro-X-60-no-Brasil-912x569.webp" alt="Teclado mecânico">
+    <main class="home-main">
+        <section class="hero">
+            <h1>Produtos em destaque</h1>
+            <p class="subtitulo">Os melhores produtos para elevar seu setup ao próximo nível</p>
+            <div class="linha-destaque"></div>
+        </section>
+
+        <section class="produtos produtos-home" id="listaProdutos">
+            <article class="produto" data-nome="Teclado mecânico" data-preco="R$ 359,99" data-imagem="imagens/teclado12.webp">
+                <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
+                <img src="imagens/teclado12.webp" alt="Teclado mecânico">
                 <div class="info">
                     <p class="nome-produto">Teclado mecânico</p>
-                    <p><span class="preco">R$ 359,99</span></p>
-                    <button class="Adicionar">Adicionar ao carrinho</button>
+                    <p class="preco">R$ 359,99</p>
+                    <button class="Adicionar"><i class="fa-solid fa-cart-shopping"></i>Adicionar ao carrinho</button>
                 </div>
-            </div>
-            <div class="produto">
-                <i class="fa-solid fa-heart favorito" ></i>
-                <img src="imagens/optical-vs-laser-mouse-for-gaming-hero.avif" alt="Mouse">
+            </article>
+
+            <article class="produto" data-nome="Mouse" data-preco="R$ 220,50" data-imagem="imagens/mouse12.avif">
+                <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
+                <img src="imagens/mouse12.avif" alt="Mouse">
                 <div class="info">
                     <p class="nome-produto">Mouse</p>
-                    <p><span class="preco">R$ 220,50</span></p>
-                    <button class="Adicionar">Adicionar ao carrinho</button>
+                    <p class="preco">R$ 220,50</p>
+                    <button class="Adicionar"><i class="fa-solid fa-cart-shopping"></i>Adicionar ao carrinho</button>
                 </div>
-            </div>
-            <div class="produto">
-                <i class="fa-solid fa-heart favorito" ></i>
-                <img src="imagens/8045f5b9-ba9a-4595-b44f-6b0f32b8c95d.jpg" alt="Headset">
+            </article>
+
+            <article class="produto" data-nome="Headset" data-preco="R$ 360,90" data-imagem="imagens/headset12.jpg">
+                <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
+                <img src="imagens/headset12.jpg" alt="Headset">
                 <div class="info">
                     <p class="nome-produto">Headset</p>
-                    <p><span class="preco">R$ 360,90</span></p>
-                    <button class="Adicionar">Adicionar ao carrinho</button>
+                    <p class="preco">R$ 360,90</p>
+                    <button class="Adicionar"><i class="fa-solid fa-cart-shopping"></i>Adicionar ao carrinho</button>
                 </div>
-            </div>
-        </div>
+            </article>
+        </section>
 
-        <p id="nenhum-resultado" style="display: none; color: white; text-align: center;">
-            Nenhum produto encontrado
-        <p>
+        <section class="secao-catalogo" id="catalogo">
+            <div class="titulo-catalogo">
+                <span class="tag-catalogo">Catálogo gamer</span>
+                <h2>Mais produtos para seu setup</h2>
+                <p>Continue descendo e encontre acessórios, periféricos e itens.</p>
+            </div>
+
+            <section class="produtos produtos-catalogo">
+                <article class="produto" data-nome="Monitor Gamer 24 144Hz IPS" data-preco="R$ 999,90" data-imagem="imagens/monitor.png">
+                    <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
+                    <div class="img-catalogo"><img src="imagens/monitor.png" alt="Monitor Gamer 24 144Hz IPS"></div>
+                    <div class="info">
+                        <p class="nome-produto">Monitor Gamer 24&quot; 144Hz IPS</p>
+                        <p class="preco">R$ 999,90</p>
+                        <button class="Adicionar"><i class="fa-solid fa-cart-shopping"></i>Adicionar ao carrinho</button>
+                    </div>
+                </article>
+
+                <article class="produto" data-nome="Cadeira Gamer Ergonômica" data-preco="R$ 1.499,90" data-imagem="imagens/cadeira.png">
+                    <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
+                    <div class="img-catalogo"><img src="imagens/cadeira.png" alt="Cadeira Gamer Ergonômica"></div>
+                    <div class="info">
+                        <p class="nome-produto">Cadeira Gamer Ergonômica</p>
+                        <p class="preco">R$ 1.499,90</p>
+                        <button class="Adicionar"><i class="fa-solid fa-cart-shopping"></i>Adicionar ao carrinho</button>
+                    </div>
+                </article>
+
+                <article class="produto" data-nome="Headset Gamer Pro 7.1 Surround" data-preco="R$ 299,90" data-imagem="imagens/headset-pro.png">
+                    <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
+                    <div class="img-catalogo"><img src="imagens/headset-pro.png" alt="Headset Gamer Pro 7.1 Surround"></div>
+                    <div class="info">
+                        <p class="nome-produto">Headset Gamer Pro 7.1 Surround</p>
+                        <p class="preco">R$ 299,90</p>
+                        <button class="Adicionar"><i class="fa-solid fa-cart-shopping"></i>Adicionar ao carrinho</button>
+                    </div>
+                </article>
+
+                <article class="produto" data-nome="Microfone Condensador USB" data-preco="R$ 349,90" data-imagem="imagens/microfone.png">
+                    <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
+                    <div class="img-catalogo"><img src="imagens/microfone.png" alt="Microfone Condensador USB"></div>
+                    <div class="info">
+                        <p class="nome-produto">Microfone Condensador USB</p>
+                        <p class="preco">R$ 349,90</p>
+                        <button class="Adicionar"><i class="fa-solid fa-cart-shopping"></i>Adicionar ao carrinho</button>
+                    </div>
+                </article>
+
+                <article class="produto" data-nome="Teclado Mecânico RGB Switch Blue" data-preco="R$ 399,90" data-imagem="imagens/teclado-rgb.png">
+                    <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
+                    <div class="img-catalogo"><img src="imagens/teclado-rgb.png" alt="Teclado Mecânico RGB Switch Blue"></div>
+                    <div class="info">
+                        <p class="nome-produto">Teclado Mecânico RGB Switch Blue</p>
+                        <p class="preco">R$ 399,90</p>
+                        <button class="Adicionar"><i class="fa-solid fa-cart-shopping"></i>Adicionar ao carrinho</button>
+                    </div>
+                </article>
+
+                <article class="produto" data-nome="Mouse Gamer RGB 16000 DPI" data-preco="R$ 199,90" data-imagem="imagens/mouse-rgb.png">
+                    <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
+                    <div class="img-catalogo"><img src="imagens/mouse-rgb.png" alt="Mouse Gamer RGB 16000 DPI"></div>
+                    <div class="info">
+                        <p class="nome-produto">Mouse Gamer RGB 16000 DPI</p>
+                        <p class="preco">R$ 199,90</p>
+                        <button class="Adicionar"><i class="fa-solid fa-cart-shopping"></i>Adicionar ao carrinho</button>
+                    </div>
+                </article>
+            </section>
+        </section>
+
+        <p id="nenhum-resultado">Nenhum produto encontrado</p>
     </main>
 
-    <aside class="carrinho">
+    <aside class="carrinho" id="painelCarrinho">
         <div class="topo">
             <h2>Carrinho de Compras</h2>
-            <span class="fechar">X</span>
+            <button class="fechar" aria-label="Fechar carrinho">×</button>
         </div>
-
+        <div class="itens"></div>
         <div class="carrinho-vazio">
-            <p><span style="color: black;">Seu carrinho está vazio.</span></p>
+            <p>Seu carrinho está vazio.</p>
             <a href="index.html" class="btn-voltar">Ver produtos</a>
         </div>
-
-        <div class="itens">
-         
-        </div>
-
-        <div class="total">
-            
-        </div>
-
         <div class="rodape">
-            <div class="total">
-                <span class="valor">Total: </span>
-                <span class="valor-total">R$ 0,00</span>
-            </div>
+            <div class="total"><span>Total: </span><span class="valor-total">R$ 0,00</span></div>
             <button class="finalizar">Finalizar Compra</button>
         </div>
     </aside>
 
     <footer>
+        <i class="fa-solid fa-gamepad footer-icon"></i>
         <a class="info-footer" href="#">Sobre</a>
         <a class="info-footer" href="#">Contato</a>
-        <a class="info-footer" href="#">Politica de Privacidade</a>
+        <a class="info-footer" href="#">Política de Privacidade</a>
     </footer>
+
     <script src="script.js"></script>
 </body>
-
 </html>
