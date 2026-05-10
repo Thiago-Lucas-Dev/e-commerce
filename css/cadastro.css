@@ -322,39 +322,3 @@ form label{
         grid-template-columns: 1fr;
     }
 }
-
-.register-card{
-    width: min(100%, 690px);
-    padding-top: 28px;
-}
-
-.register-card .auth-title{
-    margin-bottom: 24px;
-}
-
-.register-card .input-box{
-    margin-bottom: 14px;
-}
-
-.register-options{
-    margin: 2px 0 16px;
-}
-
-#erro-senha{
-    display: none;
-    margin: -5px 0 14px;
-    color: #ff7a98;
-    font-size: 0.88rem;
-    font-weight: 600;
-    text-align: center;
-}
-
-#erro-senha.show{
-    display: block;
-}
-
-@media (max-width: 720px){
-    .register-card{
-        padding-top: 26px;
-    }
-}
