@@ -19,7 +19,7 @@
 
         <div class="icones">
             <a href="login.html" aria-label="Login"><i class="fa-solid fa-user"></i></a>
-            <a href="index.html" aria-label="Carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="#" id="btn-carrinho" aria-label="Carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
             <a href="favoritos.html" class="icone-favoritos ativo" aria-label="Favoritos">
                 <i class="fa-solid fa-heart"></i>
                 <span class="badge-favoritos">6</span>
@@ -53,8 +53,24 @@
                 Limpar todos os favoritos
             </button>
         </div>
+
     </main>
 
+    <aside class="carrinho" id="painelCarrinho">
+            <div class="topo">
+                <h2>Carrinho de Compras</h2>
+                <button class="fechar" aria-label="Fechar carrinho">×</button>
+            </div>
+            <div class="itens"></div>
+            <div class="carrinho-vazio">
+                <p>Seu carrinho está vazio.</p>
+                <a href="index.html" class="btn-voltar">Ver produtos</a>
+            </div>
+            <div class="rodape">
+                <div class="total"><span>Total: </span><span class="valor-total">R$ 0,00</span></div>
+                <button class="finalizar">Finalizar Compra</button>
+            </div>
+    </aside>
     <script src="script.js"></script>
 </body>
 </html>

@@ -156,6 +156,20 @@ function iniciarFavoritos() {
     const ordenacao = document.getElementById('ordenacao');
     const barra = document.getElementById('barra');
     const btnBusca = document.getElementById('btn-busca');
+    const painel = document.getElementById('painelCarrinho');
+    const btnCarrinho = document.getElementById('btn-carrinho');
+    const fechar = document.querySelector('.fechar');
+
+    btnCarrinho.addEventListener('click', (e) => {
+        e.preventDefault();
+        painel.classList.add('ativo');
+    });
+
+    fechar.addEventListener('click', () => {
+        painel.classList.remove('ativo');
+    });
+
+    renderizarCarrinho();
 
     function filtrarOrdenar(favoritos) {
         let resultado = [...favoritos];
