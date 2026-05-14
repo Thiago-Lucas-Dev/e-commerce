@@ -17,3 +17,27 @@ document.addEventListener("click", (event) => {
     }
 
 });
+
+const btnProduto = document.getElementById('btnProduto');
+const dropdownProduto = document.getElementById('dropdownProduto');
+
+if (btnProduto && dropdownProduto) {
+
+    btnProduto.addEventListener('click', () => {
+
+        dropdownProduto.classList.toggle('ativo');
+
+    });
+
+    document.addEventListener('click', (event) => {
+
+        if (
+            !btnProduto.contains(event.target) &&
+            !dropdownProduto.contains(event.target)
+        ) {
+            dropdownProduto.classList.remove('ativo');
+        }
+
+    });
+
+}

@@ -7,10 +7,6 @@ $erros = $_SESSION['erros'] ?? [];
 
 unset($_SESSION['erros']);
 
-// TOAST DE SUCESSO
-$sucesso = $_SESSION["sucesso"] ?? null;
-
-unset($_SESSION["sucesso"]);
 
 ?>
 
@@ -29,48 +25,72 @@ unset($_SESSION["sucesso"]);
     <link rel="stylesheet" href="../assets/css/login.css">
     <link rel="stylesheet" href="../assets/css/cadastro.css">
     <link rel="stylesheet" href="../assets/css/toast.css">
-    <title>Login | PIMSTORE</title>
+    <title>Administrador | PIMSTORE</title>
 </head>
 
 <body>
 
     <header>
-        <a class="nome" href="index.php"><span>PIM</span>STORE</a>
+        <a class="nome" href="index.php">
+            <span>PIM</span>STORE
+        </a>
     </header>
 
     <main class="auth-page">
+
         <section class="auth-card login-card">
+
             <div class="user-icon">
-                <i class="fa-regular fa-user"></i>
+                <i class="fa-solid fa-user-shield"></i>
             </div>
 
             <div class="auth-title">
-                <h1>Bem-vindo à <span>PIM</span>STORE</h1>
-                <p>Faça login para acessar sua conta e continuar sua jornada gamer.</p>
+                <h1>Painel <span>Administrativo</span></h1>
+
+                <p>
+                    Entre com sua conta de administrador para acessar
+                    o gerenciamento da plataforma.
+                </p>
             </div>
 
-            <form action="../backend/login_service.php" method="post">
-                <label for="email">E-mail</label>
+            <form action="../backend/login_adm_service.php" method="post">
+
+                <label for="email">Usuário administrativo</label>
+
                 <div class="input-box">
-                    <i class="fa-regular fa-envelope"></i>
-                    <input type="email" id="email" name="email" placeholder="seu@email.com" autocomplete="email" required maxlength="60">
+                    <i class="fa-solid fa-user-tie"></i>
+
+                    <input
+                        type="input"
+                        id="email"
+                        name="nome-adm"
+                        placeholder="admin"
+                        required
+                        maxlength="60">
                 </div>
 
-                <label for="senha">Senha</label>
+                <label for="senha">Senha administrativa</label>
+
                 <div class="input-box">
-                    <i class="fa-solid fa-lock"></i>
-                    <input type="password" id="senha" name="senha" placeholder="••••••••••" autocomplete="current-password" required minlength="6" maxlength="20">
-                    <button class="show-password" type="button" aria-label="Mostrar senha" data-target="senha">
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha-adm"
+                        placeholder="••••••••••"
+                        autocomplete="current-password"
+                        required
+                        minlength="6"
+                        maxlength="20">
+
+                    <button
+                        class="show-password"
+                        type="button"
+                        aria-label="Mostrar senha"
+                        data-target="senha">
                         <i class="fa-regular fa-eye-slash"></i>
                     </button>
-                </div>
-
-                <div class="form-options">
-                    <label class="check-option">
-                        <input type="checkbox" checked>
-                        <span>Lembrar de mim</span>
-                    </label>
-                    <a href="#">Esqueci minha senha</a>
                 </div>
 
                 <?php if (!empty($erros)): ?>
@@ -78,7 +98,8 @@ unset($_SESSION["sucesso"]);
                     <div class="box-erros">
 
                         <p class="erro">
-                            <i class="bi bi-exclamation-triangle-fill"></i> <?= $erros[0]; ?>
+                            <i class="bi bi-exclamation-triangle-fill"></i>
+                            <?= $erros[0]; ?>
                         </p>
 
                     </div>
@@ -86,53 +107,62 @@ unset($_SESSION["sucesso"]);
                 <?php endif; ?>
 
                 <button class="btn-primary mb-3" type="submit">
-                    Entrar
+
+                    Acessar painel
+
                     <i class="fa-solid fa-arrow-right"></i>
+
                 </button>
 
-                <a href="login_adm.php" class="social-btn" type="button">
-                    Entrar como administrador
+                <a class="social-btn mb-3" href="cadastro_adm.php">
+
+                    Cadastrar administrador
+
                     <i class="bi bi-person-fill"></i>
+
                 </a>
 
-                <a class="btn-secondary" href="cadastro.php">Criar conta</a>
+                <a class="social-btn" href="login.php">
 
-                <div class="divider">
-                    <span>Ou continue com</span>
-                </div>
+                    <i class="fa-solid fa-arrow-left"></i>
 
-                <div class="social-login">
-                    <a href="#" class="social-btn google">
-                        <i class="fa-brands fa-google"></i>
-                        Google
-                    </a>
-                    <a href="#" class="social-btn twitch">
-                        <i class="fa-brands fa-twitch"></i>
-                        Twitch
-                    </a>
-                </div>
+                    Voltar para login do usuário
+
+                </a>
+
             </form>
+
         </section>
+
     </main>
 
     <script>
         document.querySelectorAll('.show-password').forEach((button) => {
+
             button.addEventListener('click', () => {
+
                 const input = document.getElementById(button.dataset.target);
+
                 const icon = button.querySelector('i');
+
                 const isPassword = input.type === 'password';
 
                 input.type = isPassword ? 'text' : 'password';
+
                 icon.classList.toggle('fa-eye', isPassword);
+
                 icon.classList.toggle('fa-eye-slash', !isPassword);
+
             });
+
         });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
 
-    <?php require_once __DIR__ . "/../includes/toast.php"; ?>
+    <?php require_once __DIR__ . "/../includes/footer.php"; ?>
+
 </body>
 
 </html>

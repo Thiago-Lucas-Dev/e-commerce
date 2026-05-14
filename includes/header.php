@@ -1,71 +1,27 @@
-<header>
-        <a class="nome" href="index.php"><span>PIM</span>STORE</a>
+<?php
 
-        <div class="pesquisar">
-            <input type="search" id="barra" placeholder="Busca de produtos">
-            <button id="btn-busca" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
-        <div class="icones">
-            <?php if (!isset($_SESSION["usuario"])): ?>
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-                <a href="../frontend/login.php" aria-label="Login"><i class="fa-solid fa-user"></i></a>
-
-            <?php else: ?>
-
-                <div class="usuario-dropdown">
-
-                    <button class="usuario-btn" id="btnUsuario">
-                        <i class="fa-solid fa-user"></i>
-                    </button>
-
-                    <div class="dropdown-menu" id="dropdownUsuario">
-
-                        <div class="dropdown-topo">
-                            <p class="usuario-nome">
-                                <?= $_SESSION["usuario"]["nome"] ?>
-                            </p>
-
-                            <span class="usuario-email">
-                                <?= $_SESSION["usuario"]["email"] ?>
-                            </span>
-                        </div>
-
-                        <div class="linha-dropdown"></div>
-
-                        <a href="perfil.php">
-                            <i class="fa-solid fa-user"></i>
-                            Meu perfil
-                        </a>
-
-                        <a href="pedidos.php">
-                            <i class="fa-solid fa-box"></i>
-                            Meus pedidos
-                        </a>
-
-                        <a href="favoritos.php">
-                            <i class="fa-solid fa-heart"></i>
-                            Favoritos
-                        </a>
-
-                        <div class="linha-dropdown"></div>
-
-                        <a href="../backend/logout.php" class="logout">
-                            <i class="fa-solid fa-right-from-bracket"></i>
-                            Sair
-                        </a>
-
-                    </div>
-
-                </div>
-
-            <?php endif; ?>
-            <a href="#" id="btn-carrinho" aria-label="Carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
-
-            <a href="favoritos.php" class="icone-favoritos" aria-label="Favoritos">
-                <i class="fa-solid fa-heart"></i>
-                <span class="badge-favoritos">0</span>
-            </a>
-
-        </div>
-    </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/profile.css">
+    <link rel="stylesheet" href="../assets/css/dropdown.css">
+    <link rel="stylesheet" href="../assets/css/toast.css">
+    <link rel="stylesheet" href="../assets/css/add_produto.css">
+    <link rel="stylesheet" href="../assets/css/gerenciar_produtos.css">
+    <link rel="stylesheet" href="../assets/css/sem_produto.css">
+    
+    <title>PIMSTORE</title>
+</head>

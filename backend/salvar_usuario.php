@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once __DIR__ . "/includes/init.php";
+require_once __DIR__ . "/../includes/init.php";
 
 
 error_reporting(E_ALL);
@@ -106,7 +106,7 @@ $stmt = $pdo->prepare("
 ");
 $stmt->execute([$nomeUsuario, $emailUsuario, $senhaHash]);
 
-$_SESSION["sucesso"] = "Conta criada com sucesso";
+toast("Conta criada com sucesso");
 
 header("Location: ../frontend/login.php");
 exit;

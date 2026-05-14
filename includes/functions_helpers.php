@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 // =======================================================
 // FUNÇÃO LIMPAR POST, RECEBE POST E FAZ LIMPEZA 
@@ -29,4 +29,20 @@ function campoPreenchido($campo)
     return isset($campo) && trim($campo) !== '';
 }
 
-?>
+// =======================================================
+// FUNÇÃO PARA FORMATAR VALOR R$
+// =======================================================
+
+function formatarMoeda($valor)
+{
+    return 'R$ ' . number_format((float)$valor, 2, ',', '.');
+}
+
+// =======================================================
+// FUNÇÃO TOAST 
+// =======================================================
+
+function toast($mensagem)
+{
+    $_SESSION["toast"] = $mensagem;
+}

@@ -1,0 +1,207 @@
+.sem-produtos{
+    width:min(1200px, calc(100% - 60px));
+    min-height:480px;
+
+    margin:42px auto 0;
+    padding:60px 30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+
+    text-align:center;
+
+    position:relative;
+    overflow:hidden;
+
+    border-radius:22px;
+
+    border:1px solid rgba(255, 0, 61, 0.22);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(14, 17, 24, 0.88),
+            rgba(7, 8, 12, 0.82)
+        );
+
+    box-shadow:
+        0 0 34px rgba(255, 0, 61, 0.12),
+        inset 0 0 45px rgba(255,255,255,.02),
+        0 22px 70px rgba(0,0,0,.55);
+
+    backdrop-filter:blur(18px);
+}
+
+.sem-produtos::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            118deg,
+            transparent 0 82%,
+            rgba(255, 0, 61, 0.16) 82.2%,
+            transparent 82.6% 100%
+        );
+
+    pointer-events:none;
+}
+
+.sem-produtos::after{
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+    height:420px;
+
+    right:-180px;
+    top:-180px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 0, 61, 0.16),
+            transparent 68%
+        );
+
+    pointer-events:none;
+}
+
+.sem-produtos-icon{
+    width:110px;
+    height:110px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:28px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255, 0, 61, 0.45);
+
+    background:rgba(255, 0, 61, 0.08);
+
+    box-shadow:
+        0 0 32px rgba(255, 0, 61, 0.22),
+        inset 0 0 25px rgba(255,255,255,.02);
+
+    position:relative;
+    z-index:1;
+}
+
+.sem-produtos-icon i{
+    font-size:48px;
+    color:var(--vermelho);
+
+    filter:drop-shadow(0 0 14px rgba(255,0,60,.6));
+}
+
+.sem-produtos h2{
+    font-size:42px;
+    line-height:1.1;
+    font-weight:900;
+
+    letter-spacing:-1px;
+
+    margin-bottom:14px;
+
+    position:relative;
+    z-index:1;
+}
+
+.sem-produtos p{
+    max-width:560px;
+
+    color:#d2d5dd;
+
+    font-size:18px;
+    line-height:1.7;
+
+    position:relative;
+    z-index:1;
+}
+
+.btn-cadastrar{
+    margin-top:34px;
+
+    min-width:260px;
+    height:60px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+
+    padding:0 28px;
+
+    border-radius:12px;
+
+    color:#fff;
+    text-decoration:none;
+
+    font-size:16px;
+    font-weight:800;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ff0b45,
+            #d80036
+        );
+
+    box-shadow:
+        0 14px 28px rgba(255, 0, 61, 0.28);
+
+    transition:.25s ease;
+
+    position:relative;
+    z-index:1;
+}
+
+.btn-cadastrar:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 20px 36px rgba(255, 0, 61, 0.4);
+}
+
+@media(max-width:680px){
+
+    .sem-produtos{
+        width:calc(100% - 34px);
+
+        min-height:400px;
+
+        padding:42px 22px;
+    }
+
+    .sem-produtos-icon{
+        width:90px;
+        height:90px;
+    }
+
+    .sem-produtos-icon i{
+        font-size:38px;
+    }
+
+    .sem-produtos h2{
+        font-size:30px;
+    }
+
+    .sem-produtos p{
+        font-size:16px;
+    }
+
+    .btn-cadastrar{
+        width:100%;
+    }
+}

@@ -82,6 +82,10 @@
     padding-bottom: 8px;
 }
 
+.admin-topo{
+    padding-bottom: 0;
+}
+
 .usuario-nome{
     color: #fff;
     font-size: 16px;
@@ -147,4 +151,105 @@
 .logout:hover{
     background: rgba(255,0,60,.12);
     color: var(--vermelho) !important;
+}
+
+/* =========================
+   DROPDOWN PRODUTOS
+========================= */
+
+.produto-dropdown{
+    position: relative;
+}
+
+.produto-btn{
+    position: relative;
+
+    display: grid;
+    place-items: center;
+
+    width: 30px;
+    height: 30px;
+
+    border: none;
+    background: transparent;
+
+    color: #fff;
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition: .22s ease;
+}
+
+.produto-btn:hover{
+    color: var(--vermelho);
+    transform: translateY(-3px);
+    text-shadow: 0 0 18px rgba(255,0,60,.7);
+}
+
+.produto-menu{
+    position: absolute;
+
+    top: 52px;
+    right: 0;
+
+    width: 250px;
+
+    padding: 14px;
+
+    border-radius: 18px;
+
+    border: 1px solid rgba(255,255,255,.10);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(17,20,27,.96),
+            rgba(11,13,18,.98)
+        );
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 22px 55px rgba(0,0,0,.46),
+        0 0 22px rgba(255,0,60,.12);
+
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+
+    z-index: 999;
+}
+
+.produto-menu.ativo{
+    display: flex;
+}
+
+.produto-menu a{
+    width: 100%;
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 0 14px;
+
+    border-radius: 12px;
+
+    color: #fff;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: .22s ease;
+}
+
+.produto-menu a:hover{
+    background: rgba(255,0,60,.10);
+
+    color: var(--vermelho);
+
+    transform: translateX(4px);
 }

@@ -9,6 +9,10 @@ unset($_SESSION['erros']);
 
 ?>
 
+<!-- // =======================================================
+// NÃO USA INCLUDE DE ARQUIVO HEADER POIS É TELA CHATA
+// ======================================================= -->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -19,6 +23,7 @@ unset($_SESSION['erros']);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../assets/css/cadastro.css">
     <title>Cadastro | PIMSTORE</title>
 </head>
@@ -26,7 +31,7 @@ unset($_SESSION['erros']);
 <body>
 
     <header>
-        <a class="nome" href="index.html"><span>PIM</span>STORE</a>
+        <a class="nome" href="index.php"><span>PIM</span>STORE</a>
     </header>
 
     <main class="auth-page">
@@ -84,7 +89,9 @@ unset($_SESSION['erros']);
 
                     <div class="box-erros">
 
-                        <p class="erro"><?= $erros[0]; ?></p>
+                        <p class="erro">
+                            <i class="bi bi-exclamation-triangle-fill"></i> <?= $erros[0]; ?>
+                        </p>
 
                     </div>
 
@@ -128,6 +135,9 @@ unset($_SESSION['erros']);
             });
         });
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
 </body>
 
 </html>

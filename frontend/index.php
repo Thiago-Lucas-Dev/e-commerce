@@ -1,167 +1,120 @@
 <?php
 
-session_start();
+require_once __DIR__ . "/../includes/header.php";
+require_once __DIR__ . "/../includes/init.php";
+
+// BUSCAR PRODUTOS DO BANCO
+$stmt = $pdo->prepare("
+    SELECT
+        id,
+        produto,
+        preco,
+        imagem
+    FROM produtos
+");
+
+$stmt->execute();
+
+$produtos = $stmt->fetchAll();
 
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/dropdown.css">
-    <link rel="stylesheet" href="../assets/css/toast.css">
-    <title>PIMSTORE</title>
-</head>
-
 <body>
 
-    <?php require_once __DIR__ . "/../includes/header.php"; ?>
+    <?php require_once __DIR__ . "/../includes/topbar.php"; ?>
 
     <main class="home-main">
+
         <section class="hero">
             <h1>Produtos em destaque</h1>
-            <p class="subtitulo">Os melhores produtos para elevar seu setup ao próximo nível</p>
+
+            <p class="subtitulo">
+                Os melhores produtos para elevar seu setup ao próximo nível
+            </p>
+
             <div class="linha-destaque"></div>
         </section>
 
         <section class="produtos produtos-home" id="listaProdutos">
-            <article class="produto" data-nome="Teclado mecânico" data-preco="R$ 359,99" data-imagem="../imagens/teclado12.webp">
-                <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
-                <img src="../imagens/teclado12.webp" alt="Teclado mecânico">
-                <div class="info">
-                    <p class="nome-produto">Teclado mecânico Gamer Logitech G PRO X 60</p>
-                    <p class="preco">R$ 899,99</p>
-                    <button class="Adicionar"><i class="fa-solid fa-cart-shopping"></i>Adicionar ao carrinho</button>
-                </div>
-            </article>
 
-            <article class="produto" data-nome="Mouse" data-preco="R$ 220,50" data-imagem="../imagens/mouse12.avif">
-                <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
-                <img src="../imagens/mouse12.avif" alt="Mouse">
-                <div class="info">
-                    <p class="nome-produto">Mouse Gamer USB 12000 Dpi Omen</p>
-                    <p class="preco">R$ 220,50</p>
-                    <button class="Adicionar"><i class="fa-solid fa-cart-shopping"></i>Adicionar ao carrinho</button>
-                </div>
-            </article>
+            <?php foreach ($produtos as $produto): ?>
 
-            <article class="produto" data-nome="Headset" data-preco="R$ 360,90" data-imagem="../imagens/headset12.jpg">
-                <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
-                <img src="../imagens/headset12.jpg" alt="Headset">
-                <div class="info">
-                    <p class="nome-produto">Xbox Headset Headset 7.1 Surround</p>
-                    <p class="preco">R$ 469,90</p>
-                    <button class="Adicionar"><i class="fa-solid fa-cart-shopping"></i>Adicionar ao carrinho</button>
-                </div>
-            </article>
+                <article
+                    class="produto"
+                    data-nome="<?= htmlspecialchars($produto["produto"]) ?>"
+                    data-preco="R$ <?= number_format($produto["preco"], 2, ",", ".") ?>"
+                    data-imagem="<?= !empty($produto['imagem'])
+                                        ? '../uploads/' . htmlspecialchars($produto['imagem'])
+                                        : '../imagens/produto-sem-imagem.png'
+                                    ?>">
+
+                    <button class="favorito" aria-label="Adicionar aos favoritos">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+
+                    <img
+                        src="<?= !empty($produto['imagem'])
+                                    ? '../uploads/' . htmlspecialchars($produto['imagem'])
+                                    : '../imagens/produto-sem-imagem.png'
+                                ?>""
+                        alt=" <?= htmlspecialchars($produto["produto"]) ?>">
+
+                    <div class="info">
+
+                        <p class="nome-produto">
+                            <?= htmlspecialchars($produto["produto"]) ?>
+                        </p>
+
+                        <p class="preco">
+                            R$ <?= number_format($produto["preco"], 2, ",", ".") ?>
+                        </p>
+
+                        <button class="Adicionar">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            Adicionar ao carrinho
+                        </button>
+
+                    </div>
+
+                </article>
+
+            <?php endforeach; ?>
+
         </section>
 
-        <section class="secao-catalogo" id="catalogo">
-            <div class="titulo-catalogo">
-                <span class="tag-catalogo">Catálogo gamer</span>
-                <h2>Mais produtos para seu setup</h2>
-                <p>Continue descendo e encontre acessórios, periféricos e itens.</p>
-            </div>
+        <?php if (empty($produtos)): ?>
 
-            <section class="produtos produtos-catalogo">
-                <article class="produto" data-nome="Monitor Gamer 24 144Hz IPS" data-preco="R$ 999,90" data-imagem="../imagens/monitor.png">
-                    <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
-                    <div class="img-catalogo"><img src="../imagens/monitor.png" alt="Monitor Gamer 24 144Hz IPS"></div>
-                    <div class="info">
-                        <p class="nome-produto">Monitor Gamer 24&quot; 144Hz IPS</p>
-                        <p class="preco">R$ 999,90</p>
-                        <button class="Adicionar"><i class="fa-solid fa-cart-shopping"></i>Adicionar ao carrinho</button>
-                    </div>
-                </article>
+            <section class="sem-produtos">
 
-                <article class="produto" data-nome="Cadeira Gamer Ergonômica" data-preco="R$ 1.499,90" data-imagem="../imagens/cadeira.png">
-                    <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
-                    <div class="img-catalogo"><img src="../imagens/cadeira.png" alt="Cadeira Gamer Ergonômica"></div>
-                    <div class="info">
-                        <p class="nome-produto">Cadeira Gamer Ergonômica</p>
-                        <p class="preco">R$ 1.499,90</p>
-                        <button class="Adicionar"><i class="fa-solid fa-cart-shopping"></i>Adicionar ao carrinho</button>
-                    </div>
-                </article>
+                <div class="sem-produtos-icon">
+                    <i class="fa-solid fa-box-open"></i>
+                </div>
 
-                <article class="produto" data-nome="Headset Gamer Pro 7.1 Surround" data-preco="R$ 299,90" data-imagem="../imagens/headset-pro.png">
-                    <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
-                    <div class="img-catalogo"><img src="../imagens/headset-pro.png" alt="Headset Gamer Pro 7.1 Surround"></div>
-                    <div class="info">
-                        <p class="nome-produto">Headset Gamer Pro 7.1 Surround</p>
-                        <p class="preco">R$ 299,90</p>
-                        <button class="Adicionar"><i class="fa-solid fa-cart-shopping"></i>Adicionar ao carrinho</button>
-                    </div>
-                </article>
+                <h2>Nenhum produto cadastrado</h2>
 
-                <article class="produto" data-nome="Microfone Condensador USB" data-preco="R$ 349,90" data-imagem="../imagens/microfone.png">
-                    <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
-                    <div class="img-catalogo"><img src="../imagens/microfone.png" alt="Microfone Condensador USB"></div>
-                    <div class="info">
-                        <p class="nome-produto">Microfone Condensador USB</p>
-                        <p class="preco">R$ 349,90</p>
-                        <button class="Adicionar"><i class="fa-solid fa-cart-shopping"></i>Adicionar ao carrinho</button>
-                    </div>
-                </article>
+                <p>
+                    Ainda não existem produtos disponíveis no catálogo.
+                </p>
 
-                <article class="produto" data-nome="Teclado Mecânico RGB Switch Blue" data-preco="R$ 399,90" data-imagem="../imagens/teclado-rgb.png">
-                    <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
-                    <div class="img-catalogo"><img src="../imagens/teclado-rgb.png" alt="Teclado Mecânico RGB Switch Blue"></div>
-                    <div class="info">
-                        <p class="nome-produto">Teclado Mecânico RGB Switch Blue</p>
-                        <p class="preco">R$ 399,90</p>
-                        <button class="Adicionar"><i class="fa-solid fa-cart-shopping"></i>Adicionar ao carrinho</button>
-                    </div>
-                </article>
+                <?php if (isset($_SESSION["admin"])): ?>
 
-                <article class="produto" data-nome="Mouse Gamer RGB 16000 DPI" data-preco="R$ 199,90" data-imagem="../imagens/mouse-rgb.png">
-                    <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
-                    <div class="img-catalogo"><img src="../imagens/mouse-rgb.png" alt="Mouse Gamer RGB 16000 DPI"></div>
-                    <div class="info">
-                        <p class="nome-produto">Mouse Gamer RGB 16000 DPI</p>
-                        <p class="preco">R$ 199,90</p>
-                        <button class="Adicionar"><i class="fa-solid fa-cart-shopping"></i>Adicionar ao carrinho</button>
-                    </div>
-                </article>
+                    <a href="../frontend/adicionar_produto.php" class="btn-cadastrar">
+                        <i class="fa-solid fa-plus"></i>
+                        Cadastrar primeiro produto
+                    </a>
+
+                <?php endif; ?>
+
             </section>
-        </section>
 
-        <p id="nenhum-resultado">Nenhum produto encontrado</p>
+        <?php endif; ?>
+
     </main>
 
-    <aside class="carrinho" id="painelCarrinho">
-        <div class="topo">
-            <h2>Carrinho de Compras</h2>
-            <button class="fechar" aria-label="Fechar carrinho">×</button>
-        </div>
-        <div class="itens"></div>
-        <div class="carrinho-vazio">
-            <p>Seu carrinho está vazio.</p>
-            <a href="index.php" class="btn-voltar">Ver produtos</a>
-        </div>
-        <div class="rodape">
-            <div class="total"><span>Total: </span><span class="valor-total">R$ 0,00</span></div>
-            <button class="finalizar">Finalizar Compra</button>
-        </div>
-    </aside>
+    <?php require_once __DIR__ . "/../includes/carrinho.php"; ?>
 
-    <footer>
-        <i class="fa-solid fa-gamepad footer-icon"></i>
-        <a class="info-footer" href="#">Sobre</a>
-        <a class="info-footer" href="#">Contato</a>
-        <a class="info-footer" href="#">Política de Privacidade</a>
-    </footer>
-
-    <script src="../assets/js/script.js"></script>
-    <script src="../assets/js/dropdown.js"></script>
 </body>
 
-<?php require_once __DIR__ . "/../includes/toast.php"; ?>
+<?php require_once __DIR__ . "/../includes/footer.php"; ?>
 
 </html>
