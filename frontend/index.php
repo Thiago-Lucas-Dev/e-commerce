@@ -35,8 +35,8 @@ session_start();
                 <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
                 <img src="../imagens/teclado12.webp" alt="Teclado mecânico">
                 <div class="info">
-                    <p class="nome-produto">Teclado mecânico</p>
-                    <p class="preco">R$ 359,99</p>
+                    <p class="nome-produto">Teclado mecânico Gamer Logitech G PRO X 60</p>
+                    <p class="preco">R$ 899,99</p>
                     <button class="Adicionar"><i class="fa-solid fa-cart-shopping"></i>Adicionar ao carrinho</button>
                 </div>
             </article>
@@ -45,7 +45,7 @@ session_start();
                 <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
                 <img src="../imagens/mouse12.avif" alt="Mouse">
                 <div class="info">
-                    <p class="nome-produto">Mouse</p>
+                    <p class="nome-produto">Mouse Gamer USB 12000 Dpi Omen</p>
                     <p class="preco">R$ 220,50</p>
                     <button class="Adicionar"><i class="fa-solid fa-cart-shopping"></i>Adicionar ao carrinho</button>
                 </div>
@@ -55,8 +55,8 @@ session_start();
                 <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
                 <img src="../imagens/headset12.jpg" alt="Headset">
                 <div class="info">
-                    <p class="nome-produto">Headset</p>
-                    <p class="preco">R$ 360,90</p>
+                    <p class="nome-produto">Xbox Headset Headset 7.1 Surround</p>
+                    <p class="preco">R$ 469,90</p>
                     <button class="Adicionar"><i class="fa-solid fa-cart-shopping"></i>Adicionar ao carrinho</button>
                 </div>
             </article>

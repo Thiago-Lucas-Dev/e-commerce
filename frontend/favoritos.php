@@ -40,6 +40,7 @@
                 Limpar todos os favoritos
             </button>
         </div>
+
     </main>
     
     <script src="/assets/js/script.js"></script>

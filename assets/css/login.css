@@ -51,6 +51,25 @@ body::after{
     opacity: 0.65;
 }
 
+header{
+    text-align: center;
+    margin: 20px 0px 0px;
+}
+
+.nome{
+    color:#fff;
+    text-decoration:none;
+    font-size:42px;
+    line-height:1;
+    font-weight:900;
+    letter-spacing:-2px;
+    white-space:nowrap;
+}
+
+.nome span{
+    color: #d80036;
+}
+
 .auth-page{
     position: relative;
     z-index: 1;

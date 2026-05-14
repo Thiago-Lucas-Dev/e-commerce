@@ -24,6 +24,11 @@ unset($_SESSION['erros']);
 </head>
 
 <body>
+
+    <header>
+        <a class="nome" href="index.html"><span>PIM</span>STORE</a>
+    </header>
+
     <main class="auth-page">
         <section class="auth-card register-card">
             <div class="user-icon">
