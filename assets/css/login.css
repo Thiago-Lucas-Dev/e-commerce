@@ -302,6 +302,15 @@ form label{
     color: #9146ff;
 }
 
+.box-sucesso {
+    background: #e8f5e9;
+    border: 1px solid #43a047;
+    color: #2e7d32;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
 @media (max-width: 720px){
     body::before,
     body::after{

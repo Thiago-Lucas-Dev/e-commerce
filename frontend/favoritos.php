@@ -1,31 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <title>Favoritos | PIMSTORE</title>
 </head>
+
 <body class="pagina-favoritos">
-    <header>
-        <a class="nome" href="index.html"><span>PIM</span>STORE</a>
 
-        <div class="pesquisar">
-            <input type="search" id="barra" placeholder="Busca de produtos">
-            <button id="btn-busca" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
-
-        <div class="icones">
-            <a href="login.html" aria-label="Login"><i class="fa-solid fa-user"></i></a>
-            <a href="index.html" aria-label="Carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="favoritos.html" class="icone-favoritos ativo" aria-label="Favoritos">
-                <i class="fa-solid fa-heart"></i>
-                <span class="badge-favoritos">6</span>
-            </a>
-        </div>
-    </header>
+    <?php require_once __DIR__ . "/../includes/header.php"; ?>
 
     <main class="favoritos-main">
         <section class="topo-favoritos">
@@ -54,7 +41,8 @@
             </button>
         </div>
     </main>
-
-    <script src="script.js"></script>
+    
+    <script src="/assets/js/script.js"></script>
 </body>
+
 </html>

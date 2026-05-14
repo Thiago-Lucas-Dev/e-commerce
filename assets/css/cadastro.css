@@ -353,6 +353,20 @@ form label{
     display: block;
 }
 
+.box-erros {
+    background: #ffebee;
+    border: 1px solid #e53935;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.erro {
+    color: #c62828;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
 @media (max-width: 720px){
     .register-card{
         padding-top: 26px;

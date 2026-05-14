@@ -1,0 +1,150 @@
+/* =========================
+   DROPDOWN USUARIO
+========================= */
+
+.usuario-dropdown{
+    position: relative;
+}
+
+/* BOTÃO */
+.usuario-btn{
+    position: relative;
+
+    display: grid;
+    place-items: center;
+
+    width: 30px;
+    height: 30px;
+
+    border: none;
+    background: transparent;
+
+    color: #fff;
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition: .22s ease;
+}
+
+.usuario-btn:hover{
+    color: var(--vermelho);
+    transform: translateY(-3px);
+    text-shadow: 0 0 18px rgba(255,0,60,.7);
+}
+
+/* MENU */
+.dropdown-menu{
+    position: absolute;
+
+    top: 52px;
+    right: 0;
+
+    width: 290px;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    border: 1px solid rgba(255,255,255,.10);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(17,20,27,.96),
+            rgba(11,13,18,.98)
+        );
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 22px 55px rgba(0,0,0,.46),
+        0 0 22px rgba(255,0,60,.12);
+
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+
+    z-index: 999;
+}
+
+/* ABRIR MENU */
+.dropdown-menu.ativo{
+    display: flex;
+}
+
+/* TOPO */
+.dropdown-topo{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    padding-bottom: 8px;
+}
+
+.usuario-nome{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.usuario-email{
+    color: #b8b8c0;
+    font-size: 13px;
+}
+
+/* LINHA */
+.linha-dropdown{
+    width: 100%;
+    height: 1px;
+
+    background: rgba(255,255,255,.08);
+
+    margin: 6px 0;
+}
+
+/* LINKS */
+.dropdown-menu a{
+    width: 100%;
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 0 14px;
+
+    border-radius: 12px;
+
+    color: #fff;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: .22s ease;
+}
+
+.dropdown-menu a i{
+    width: 18px;
+    font-size: 16px;
+}
+
+/* HOVER */
+.dropdown-menu a:hover{
+    background: rgba(255,0,60,.10);
+
+    color: var(--vermelho);
+
+    transform: translateX(4px);
+}
+
+/* LOGOUT */
+.logout{
+    color: #ff758f !important;
+}
+
+.logout:hover{
+    background: rgba(255,0,60,.12);
+    color: var(--vermelho) !important;
+}

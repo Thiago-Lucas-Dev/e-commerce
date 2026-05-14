@@ -1,31 +1,27 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dropdown.css">
+    <link rel="stylesheet" href="../assets/css/toast.css">
     <title>PIMSTORE</title>
 </head>
+
 <body>
-    <header>
-        <a class="nome" href="index.html"><span>PIM</span>STORE</a>
 
-        <div class="pesquisar">
-            <input type="search" id="barra" placeholder="Busca de produtos">
-            <button id="btn-busca" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
-
-        <div class="icones">
-            <a href="login.html" aria-label="Login"><i class="fa-solid fa-user"></i></a>
-            <a href="#" id="btn-carrinho" aria-label="Carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="favoritos.html" class="icone-favoritos" aria-label="Favoritos">
-                <i class="fa-solid fa-heart"></i>
-                <span class="badge-favoritos">0</span>
-            </a>
-        </div>
-    </header>
+    <?php require_once __DIR__ . "/../includes/header.php"; ?>
 
     <main class="home-main">
         <section class="hero">
@@ -35,9 +31,9 @@
         </section>
 
         <section class="produtos produtos-home" id="listaProdutos">
-            <article class="produto" data-nome="Teclado mecânico" data-preco="R$ 359,99" data-imagem="imagens/teclado12.webp">
+            <article class="produto" data-nome="Teclado mecânico" data-preco="R$ 359,99" data-imagem="../imagens/teclado12.webp">
                 <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
-                <img src="imagens/teclado12.webp" alt="Teclado mecânico">
+                <img src="../imagens/teclado12.webp" alt="Teclado mecânico">
                 <div class="info">
                     <p class="nome-produto">Teclado mecânico</p>
                     <p class="preco">R$ 359,99</p>
@@ -45,9 +41,9 @@
                 </div>
             </article>
 
-            <article class="produto" data-nome="Mouse" data-preco="R$ 220,50" data-imagem="imagens/mouse12.avif">
+            <article class="produto" data-nome="Mouse" data-preco="R$ 220,50" data-imagem="../imagens/mouse12.avif">
                 <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
-                <img src="imagens/mouse12.avif" alt="Mouse">
+                <img src="../imagens/mouse12.avif" alt="Mouse">
                 <div class="info">
                     <p class="nome-produto">Mouse</p>
                     <p class="preco">R$ 220,50</p>
@@ -55,9 +51,9 @@
                 </div>
             </article>
 
-            <article class="produto" data-nome="Headset" data-preco="R$ 360,90" data-imagem="imagens/headset12.jpg">
+            <article class="produto" data-nome="Headset" data-preco="R$ 360,90" data-imagem="../imagens/headset12.jpg">
                 <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
-                <img src="imagens/headset12.jpg" alt="Headset">
+                <img src="../imagens/headset12.jpg" alt="Headset">
                 <div class="info">
                     <p class="nome-produto">Headset</p>
                     <p class="preco">R$ 360,90</p>
@@ -74,9 +70,9 @@
             </div>
 
             <section class="produtos produtos-catalogo">
-                <article class="produto" data-nome="Monitor Gamer 24 144Hz IPS" data-preco="R$ 999,90" data-imagem="imagens/monitor.png">
+                <article class="produto" data-nome="Monitor Gamer 24 144Hz IPS" data-preco="R$ 999,90" data-imagem="../imagens/monitor.png">
                     <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
-                    <div class="img-catalogo"><img src="imagens/monitor.png" alt="Monitor Gamer 24 144Hz IPS"></div>
+                    <div class="img-catalogo"><img src="../imagens/monitor.png" alt="Monitor Gamer 24 144Hz IPS"></div>
                     <div class="info">
                         <p class="nome-produto">Monitor Gamer 24&quot; 144Hz IPS</p>
                         <p class="preco">R$ 999,90</p>
@@ -84,9 +80,9 @@
                     </div>
                 </article>
 
-                <article class="produto" data-nome="Cadeira Gamer Ergonômica" data-preco="R$ 1.499,90" data-imagem="imagens/cadeira.png">
+                <article class="produto" data-nome="Cadeira Gamer Ergonômica" data-preco="R$ 1.499,90" data-imagem="../imagens/cadeira.png">
                     <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
-                    <div class="img-catalogo"><img src="imagens/cadeira.png" alt="Cadeira Gamer Ergonômica"></div>
+                    <div class="img-catalogo"><img src="../imagens/cadeira.png" alt="Cadeira Gamer Ergonômica"></div>
                     <div class="info">
                         <p class="nome-produto">Cadeira Gamer Ergonômica</p>
                         <p class="preco">R$ 1.499,90</p>
@@ -94,9 +90,9 @@
                     </div>
                 </article>
 
-                <article class="produto" data-nome="Headset Gamer Pro 7.1 Surround" data-preco="R$ 299,90" data-imagem="imagens/headset-pro.png">
+                <article class="produto" data-nome="Headset Gamer Pro 7.1 Surround" data-preco="R$ 299,90" data-imagem="../imagens/headset-pro.png">
                     <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
-                    <div class="img-catalogo"><img src="imagens/headset-pro.png" alt="Headset Gamer Pro 7.1 Surround"></div>
+                    <div class="img-catalogo"><img src="../imagens/headset-pro.png" alt="Headset Gamer Pro 7.1 Surround"></div>
                     <div class="info">
                         <p class="nome-produto">Headset Gamer Pro 7.1 Surround</p>
                         <p class="preco">R$ 299,90</p>
@@ -104,9 +100,9 @@
                     </div>
                 </article>
 
-                <article class="produto" data-nome="Microfone Condensador USB" data-preco="R$ 349,90" data-imagem="imagens/microfone.png">
+                <article class="produto" data-nome="Microfone Condensador USB" data-preco="R$ 349,90" data-imagem="../imagens/microfone.png">
                     <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
-                    <div class="img-catalogo"><img src="imagens/microfone.png" alt="Microfone Condensador USB"></div>
+                    <div class="img-catalogo"><img src="../imagens/microfone.png" alt="Microfone Condensador USB"></div>
                     <div class="info">
                         <p class="nome-produto">Microfone Condensador USB</p>
                         <p class="preco">R$ 349,90</p>
@@ -114,9 +110,9 @@
                     </div>
                 </article>
 
-                <article class="produto" data-nome="Teclado Mecânico RGB Switch Blue" data-preco="R$ 399,90" data-imagem="imagens/teclado-rgb.png">
+                <article class="produto" data-nome="Teclado Mecânico RGB Switch Blue" data-preco="R$ 399,90" data-imagem="../imagens/teclado-rgb.png">
                     <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
-                    <div class="img-catalogo"><img src="imagens/teclado-rgb.png" alt="Teclado Mecânico RGB Switch Blue"></div>
+                    <div class="img-catalogo"><img src="../imagens/teclado-rgb.png" alt="Teclado Mecânico RGB Switch Blue"></div>
                     <div class="info">
                         <p class="nome-produto">Teclado Mecânico RGB Switch Blue</p>
                         <p class="preco">R$ 399,90</p>
@@ -124,9 +120,9 @@
                     </div>
                 </article>
 
-                <article class="produto" data-nome="Mouse Gamer RGB 16000 DPI" data-preco="R$ 199,90" data-imagem="imagens/mouse-rgb.png">
+                <article class="produto" data-nome="Mouse Gamer RGB 16000 DPI" data-preco="R$ 199,90" data-imagem="../imagens/mouse-rgb.png">
                     <button class="favorito" aria-label="Adicionar aos favoritos"><i class="fa-regular fa-heart"></i></button>
-                    <div class="img-catalogo"><img src="imagens/mouse-rgb.png" alt="Mouse Gamer RGB 16000 DPI"></div>
+                    <div class="img-catalogo"><img src="../imagens/mouse-rgb.png" alt="Mouse Gamer RGB 16000 DPI"></div>
                     <div class="info">
                         <p class="nome-produto">Mouse Gamer RGB 16000 DPI</p>
                         <p class="preco">R$ 199,90</p>
@@ -147,7 +143,7 @@
         <div class="itens"></div>
         <div class="carrinho-vazio">
             <p>Seu carrinho está vazio.</p>
-            <a href="index.html" class="btn-voltar">Ver produtos</a>
+            <a href="index.php" class="btn-voltar">Ver produtos</a>
         </div>
         <div class="rodape">
             <div class="total"><span>Total: </span><span class="valor-total">R$ 0,00</span></div>
@@ -162,6 +158,10 @@
         <a class="info-footer" href="#">Política de Privacidade</a>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/dropdown.js"></script>
 </body>
+
+<?php require_once __DIR__ . "/../includes/toast.php"; ?>
+
 </html>
