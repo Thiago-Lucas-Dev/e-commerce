@@ -45,7 +45,7 @@ $produtos = $stmt->fetchAll();
                     data-preco="R$ <?= number_format($produto["preco"], 2, ",", ".") ?>"
                     data-imagem="<?= !empty($produto['imagem'])
                                         ? '../uploads/' . htmlspecialchars($produto['imagem'])
-                                        : '../imagens/produto-sem-imagem.png'
+                                        : '../uploads/sem_imagem.png'
                                     ?>">
 
                     <button class="favorito" aria-label="Adicionar aos favoritos">
@@ -55,7 +55,7 @@ $produtos = $stmt->fetchAll();
                     <img
                         src="<?= !empty($produto['imagem'])
                                     ? '../uploads/' . htmlspecialchars($produto['imagem'])
-                                    : '../imagens/produto-sem-imagem.png'
+                                    : '../uploads/sem_imagem.png'
                                 ?>""
                         alt=" <?= htmlspecialchars($produto["produto"]) ?>">
 

@@ -63,13 +63,16 @@ $produtos = $stmt->fetchAll();;
                             </div>
 
                             <div class="acoes-produto">
-                                <button class="btn-editar">
-                                    <i class="fa-solid fa-pen"></i>
-                                </button>
 
-                                <button class="btn-excluir">
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>
+                                <form action="../backend/excluir_produto.php" method="POST">
+
+                                    <input type="hidden" name="id" value="<?= $produto['id'] ?>">
+
+                                    <button class="btn-excluir" type="submit">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+
+                                </form>
                             </div>
 
                         </div>

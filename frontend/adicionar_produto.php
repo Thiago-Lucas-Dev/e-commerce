@@ -70,6 +70,15 @@ unset($_SESSION["sucesso"])
                         </div>
                     </div>
 
+                      <div class="campo full">
+                        <label>Descrição do produto</label>
+
+                        <div class="input-box">
+                            <i class="fa-solid fa-chat"></i>
+                            <textarea name="descricao" id="" rows="2"></textarea>
+                        </div>
+                    </div>
+
                     <div class="campo full">
                         <label>Imagem do produto</label>
 
@@ -95,12 +104,6 @@ unset($_SESSION["sucesso"])
                         <i class="fa-solid fa-plus"></i>
                         Cadastrar produto
                     </button>
-
-                    <button class="btn btn-secondary" type="reset">
-                        <i class="fa-solid fa-rotate-left"></i>
-                        Limpar
-                    </button>
-
                 </div>
 
             </form>
